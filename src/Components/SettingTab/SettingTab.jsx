@@ -1,3 +1,4 @@
+import React, { memo } from "react";
 import { Box, Typography } from "@mui/material";
 
 function SettingTab() {
@@ -27,4 +28,4 @@ function SettingTab() {
   );
 }
 
-export default SettingTab;
+export default memo(SettingTab);

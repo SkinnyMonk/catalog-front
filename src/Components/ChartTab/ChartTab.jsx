@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -15,8 +14,14 @@ const DateRangeArray = [
   { label: "1y", value: "1" },
   { label: "max", value: "1" },
 ];
-function ChartTab({ fullscreen, setFullscreen, compare, setCompare }) {
-  const [selectedDateRange, setSelectedDateRange] = useState("1d");
+function ChartTab({
+  fullscreen,
+  setFullscreen,
+  compare,
+  setCompare,
+  selectedDateRange,
+  setSelectedDateRange,
+}) {
   const isMobile = useMediaQuery("(max-width:1000px)");
   return (
     <div>

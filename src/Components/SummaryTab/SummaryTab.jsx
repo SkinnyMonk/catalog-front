@@ -1,3 +1,4 @@
+import React, { memo } from "react";
 import { Box, Typography } from "@mui/material";
 function SummaryTab() {
   return (
@@ -32,4 +33,4 @@ function SummaryTab() {
   );
 }
 
-export default SummaryTab;
+export default memo(SummaryTab);

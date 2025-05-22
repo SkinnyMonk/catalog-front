@@ -41,6 +41,7 @@ function StockDetails() {
   const [value, setValue] = useState(1);
   const [fullscreen, setFullscreen] = useState(false);
   const [compare, setCompare] = useState(false);
+  const [selectedDateRange, setSelectedDateRange] = useState("1d");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -53,6 +54,8 @@ function StockDetails() {
           setFullscreen={setFullscreen}
           compare={compare}
           setCompare={setCompare}
+          selectedDateRange={selectedDateRange}
+          setSelectedDateRange={setSelectedDateRange}
         />
       ) : (
         <>
@@ -169,6 +172,8 @@ function StockDetails() {
                 setFullscreen={setFullscreen}
                 compare={compare}
                 setCompare={setCompare}
+                selectedDateRange={selectedDateRange}
+                setSelectedDateRange={setSelectedDateRange}
               />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>

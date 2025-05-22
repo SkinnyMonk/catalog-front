@@ -1,3 +1,4 @@
+import React, { memo } from "react";
 import { Box, Typography } from "@mui/material";
 
 function AnalysisTab() {
@@ -5,7 +6,7 @@ function AnalysisTab() {
     <div>
       <Box sx={{ marginLeft: "60px", width: "80%" }}>
         <Typography variant="h5" sx={{ mb: 2, color: "#1A243A" }}>
-          Analyst Analysis
+          Analyst Ratings
         </Typography>
         <Typography sx={{ color: "#6F7177", mb: 1 }}>
           <b>Analyst Recommendation:</b> Buy
@@ -28,4 +29,4 @@ function AnalysisTab() {
   );
 }
 
-export default AnalysisTab;
+export default memo(AnalysisTab);

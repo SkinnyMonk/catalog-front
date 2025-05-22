@@ -1,3 +1,4 @@
+import React, { memo } from "react";
 import { Box, Typography } from "@mui/material";
 
 function StatisticsTab() {
@@ -33,4 +34,4 @@ function StatisticsTab() {
   );
 }
 
-export default StatisticsTab;
+export default memo(StatisticsTab);
