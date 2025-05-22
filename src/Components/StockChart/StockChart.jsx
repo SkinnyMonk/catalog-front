@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Chart from "chart.js/auto";
 
-// Add compare prop
 export default function StockChart({ stockData, compare }) {
   const chartRef = useRef(null);
   const myChartRef = useRef(null);
@@ -12,6 +11,7 @@ export default function StockChart({ stockData, compare }) {
   const openStockVolume = stockData.values.map(
     (entry) => parseInt(entry.volume) / 3000000
   );
+  console.log("comp", compare);
 
   const [tooltip, setTooltip] = useState({
     show: false,
@@ -90,17 +90,16 @@ export default function StockChart({ stockData, compare }) {
       },
     ];
 
-    // Add a second dataset for comparison if compare is true
     if (compare) {
       datasets.push({
         type: "line",
-        label: "Compare Stock Price", // You might want to make this dynamic
+        label: "Compare Stock Price",
         data: [
           ...openStockValues.map((val) => val * 0.9),
           ...openStockValues.map((val) => val * 0.9),
           ...openStockValues.map((val) => val * 0.9),
-        ], // Example: 10% lower
-        borderColor: "#FF5733", // Different color for comparison line
+        ],
+        borderColor: "#FF5733",
         borderWidth: 2,
         fill: false,
         tension: 0,
@@ -227,7 +226,7 @@ export default function StockChart({ stockData, compare }) {
     return () => {
       myChartRef.current?.destroy();
     };
-  }, [lastIndex, openStockValues, openStockVolume, compare]); // Add compare to dependency array
+  }, [lastIndex, compare]);
 
   const priceTooltipStyle = tooltip.show
     ? {

@@ -15,9 +15,8 @@ const DateRangeArray = [
   { label: "1y", value: "1" },
   { label: "max", value: "1" },
 ];
-function ChartTab({ fullscreen, setFullscreen }) {
+function ChartTab({ fullscreen, setFullscreen, compare, setCompare }) {
   const [selectedDateRange, setSelectedDateRange] = useState("1d");
-  const [compare, setCompare] = useState(false); // Add compare state
   console.log(fullscreen);
   const isMobile = useMediaQuery("(max-width:1000px)");
   return (

@@ -40,6 +40,7 @@ function a11yProps(index) {
 function StockDetails() {
   const [value, setValue] = useState(1);
   const [fullscreen, setFullscreen] = useState(false);
+  const [compare, setCompare] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -48,7 +49,12 @@ function StockDetails() {
   return (
     <div style={{ marginTop: "60px" }}>
       {fullscreen ? (
-        <ChartTab fullscreen={fullscreen} setFullscreen={setFullscreen} />
+        <ChartTab
+          fullscreen={fullscreen}
+          setFullscreen={setFullscreen}
+          compare={compare}
+          setCompare={setCompare}
+        />
       ) : (
         <>
           <Box
@@ -159,7 +165,12 @@ function StockDetails() {
               <SummaryTab />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              <ChartTab fullscreen={fullscreen} setFullscreen={setFullscreen} />
+              <ChartTab
+                fullscreen={fullscreen}
+                setFullscreen={setFullscreen}
+                compare={compare}
+                setCompare={setCompare}
+              />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={2}>
               <StatisticsTab />
