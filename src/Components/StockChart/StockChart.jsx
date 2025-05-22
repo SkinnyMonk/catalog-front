@@ -11,7 +11,6 @@ export default function StockChart({ stockData, compare }) {
   const openStockVolume = stockData.values.map(
     (entry) => parseInt(entry.volume) / 3000000
   );
-  console.log("comp", compare);
 
   const [tooltip, setTooltip] = useState({
     show: false,
@@ -114,7 +113,7 @@ export default function StockChart({ stockData, compare }) {
         { length: 3 * openStockValues.length },
         (_, i) => `T${i + 1}`
       ),
-      datasets: datasets, // Use the modified datasets array
+      datasets: datasets,
     };
 
     const options = {

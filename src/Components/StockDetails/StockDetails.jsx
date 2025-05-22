@@ -45,7 +45,6 @@ function StockDetails() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  console.log("full", fullscreen);
   return (
     <div style={{ marginTop: "60px" }}>
       {fullscreen ? (
